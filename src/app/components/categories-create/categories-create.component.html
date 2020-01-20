@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>Create new Category</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <div class="form-group">
+        <label for="categories_title">Create title</label>
+        <input [(ngModel)]="category.title" type="text" class="form-control" id="categories_title"/>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-4 offset-4 mt-2 mb-5">
+      <button (click)="saveCategory()" class="btn btn-success btn-block">Save</button>
+    </div>
+  </div>
+</div>

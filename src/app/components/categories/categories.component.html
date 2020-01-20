@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row m-3">
+    <div class="col-8">
+      <h1>Category List</h1>
+    </div>
+    <div class="col-4 text-right">
+      <button class="btn btn-info" (click)="getCategories()">
+        <i class="fa fa-refresh"></i>
+      </button>
+      <a class="btn btn-primary" routerLink="/categories/create">
+        <i class="fa fa-plus"></i> Create Category
+      </a>
+    </div>
+  </div>
+  <div class="row" *ngIf="loading">
+    <div class="col text-center">
+      <div class="spinner-border" role="status"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped table-dark table-bordered">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Tools</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cat of categories">
+            <td> {{cat.title}} </td>
+            <td>
+              <a [routerLink]="'/categories/update/' + cat._id" class="btn btn-sm btn-warning mr-1">
+                <i class="fa fa-pencil"></i>
+              </a>
+              <button (click)="deleteCategories(cat._id)" class="btn btn-sm btn-danger">
+                <i class="fa fa-remove"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
